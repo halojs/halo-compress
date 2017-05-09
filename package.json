@@ -15,7 +15,9 @@
     "codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov"
   },
   "devDependencies": {
+    "koa": "^2.2.0",
     "ava": "^0.19.1",
+    "koa-mount": "^3.0.0",
     "babel-core": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "codecov": "^2.1.0",
@@ -39,8 +41,6 @@
     ]
   },
   "dependencies": {
-    "koa": "^2.2.0",
-    "koa-compress": "^2.0.0",
-    "koa-mount": "^3.0.0"
+    "koa-compress": "^2.0.0"
   }
 }
