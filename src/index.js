@@ -3,8 +3,10 @@
 
 import koaCompress from 'koa-compress'
 
-export default function (options = {}) {
-    let compress = koaCompress({ level: 4 })
+export default function (options) {
+    let compress = koaCompress(Object.assign({}, {
+        level: 4
+    }, options))
 
     return function* _compress(next) {
         yield* compress.call(this, next)
