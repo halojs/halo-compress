@@ -8,7 +8,7 @@ export default function (options) {
         level: 4
     }, options))
 
-    return function* _compress(next) {
-        yield* compress.call(this, next)
+    return async function _compress(ctx, next) {
+        await compress(ctx, next)
     }
 }

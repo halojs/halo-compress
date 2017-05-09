@@ -11,11 +11,11 @@ const req = request.defaults({
 })
 
 test.before.cb((t) => {
-    let app = koa()
+    let app = new koa()
 
     app.use(compress())
-    app.use(mount('/compress', function *() {
-        this.body = { ok: Array(2000).fill(1).join('') }
+    app.use(mount('/compress', async function(ctx, next) {
+        ctx.body = { ok: Array(2000).fill(1).join('') }
     }))
     app.listen(3000, t.end)
 })
